@@ -4,6 +4,7 @@ import * as fromStore from '../../store';
 import { AppState } from 'src/app/app.state';
 import { GenericHooks } from 'src/app/util/generic-hooks';
 import { filter } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-main-container',
@@ -14,12 +15,14 @@ export class MainContainerComponent extends GenericHooks implements OnInit {
   objectIsLoading = false;
   collectionIsLoading = false;
   isLoading = false;
+  routerUrl: string;
 
-  constructor(private store: Store<AppState>, private cdr: ChangeDetectorRef) {
+  constructor(private store: Store<AppState>, private cdr: ChangeDetectorRef, private router: Router) {
     super();
   }
 
   ngOnInit(): void {
+    this.routerUrl = this.router.url;
     this.subscriptions.push(
       this.store
         .select(fromStore.selectObjectIsLoading)
