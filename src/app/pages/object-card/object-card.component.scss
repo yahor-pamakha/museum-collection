@@ -47,8 +47,7 @@
         margin-left: auto;
         margin-right: 0;
 
-
-        &:hover:not([class*=mat-button-disabled]){
+        &:hover:not([class*='mat-button-disabled']) {
           transition: 0.4s ease-in-out;
           width: 60px;
           height: 60px;

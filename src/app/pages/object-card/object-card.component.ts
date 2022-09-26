@@ -33,7 +33,7 @@ export class ObjectCardComponent implements OnInit {
 
   ngOnInit(): void {
     window.scroll(0, 0);
-    
+
     this.route.queryParams.subscribe((params) => {
       this.objectNumber = params['id'];
     });
@@ -79,14 +79,14 @@ export class ObjectCardComponent implements OnInit {
           this.imageWrapperDisplay = 'block';
           this.imageHeight = this.tilesMap[`z${--this.heightZoomCount}`].height;
           this.imageWidth = this.tilesMap[`z${--this.widthZoomCount}`].width;
-        };
+        }
         break;
       case 'zoom-out':
         if (this.heightZoomCount !== 4) {
           this.imageHeight = this.tilesMap[`z${++this.heightZoomCount}`].height;
           this.imageWidth = this.tilesMap[`z${++this.widthZoomCount}`].width;
-        } 
-        
+        }
+
         if (this.heightZoomCount === 4) {
           this.imageWrapperDisplay = 'flex';
         }
@@ -96,7 +96,7 @@ export class ObjectCardComponent implements OnInit {
 
   getButtonDisabled(button) {
     let result;
-    
+
     switch (button) {
       case 'zoom-in':
         result = this.heightZoomCount === 1;
