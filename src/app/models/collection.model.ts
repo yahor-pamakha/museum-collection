@@ -5,6 +5,13 @@ export interface Collection {
   elapsedMilliseconds: number;
 }
 
+export interface CollectionApiParams {
+  pageNumber?: number;
+  pageSize?: number;
+  searchKey?: string;
+  sortKey?: SORT_KEY_ENUM;
+}
+
 export enum SORT_KEY_ENUM {
   RELEVANCE = 'relevance',
   OBJECT_TYPE = 'objecttype',

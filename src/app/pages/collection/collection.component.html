@@ -1,0 +1,36 @@
+<div class="container">
+  <app-header-form
+    [searchDisabled]="searchDisabled"
+    [sortOptions]="collectionSortOptions"
+    (searchSubmitEvent)="onSearchSubmit($event)"
+    (sortSubmitEvent)="onSortSubmit($event)"
+  ></app-header-form>
+
+  <div class="container__item" *ngFor="let artObject of collection?.artObjects">
+    <img *ngIf="artObject.hasImage" class="container__item-image" src="{{ artObject.headerImage.url }}" />
+    <img *ngIf="!artObject.hasImage" class="container__item-image" src="assets/images/no-image.png" />
+
+    <a class="container__item-info" routerLink="/collection/object" [queryParams]="{ id: artObject.objectNumber }">
+      <span class="container__item-info-title gmat-title">{{ artObject.title }}</span>
+
+      <span class="container__item-info-author gmat-subheading-1">
+        {{ artObject.principalOrFirstMaker }}
+      </span>
+
+      <span class="container__item-info-date gmat-subheading-1">
+        {{ artObject.productionPlaces | getPlaces }}
+        {{ artObject.longTitle | getYear }}
+      </span>
+    </a>
+  </div>
+
+  <mat-paginator
+    *ngIf="!paginationDisabled"
+    [length]="collectionLength"
+    [pageSize]="collectionAPIParams.pageSize"
+    [pageSizeOptions]="pageSizeOptions"
+    (page)="onPageChange($event)"
+    [disabled]="paginationDisabled"
+  >
+  </mat-paginator>
+</div>
