@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "dist/museum-collection",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
