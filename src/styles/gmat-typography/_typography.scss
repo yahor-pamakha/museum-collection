@@ -1,0 +1,36 @@
+@use '@angular/material' as mat;
+
+$montserrat-font-family: '"Montserrat", sans-serif';
+
+$custom-typography-config: mat.define-typography-config(
+  $headline: mat.define-typography-level(50px, 56px, 700, $montserrat-font-family),
+  $display-2: mat.define-typography-level(36px, 32px, 500, $montserrat-font-family),
+  $title: mat.define-typography-level(22px, 24px, 700, $montserrat-font-family),
+  $subheading-1: mat.define-typography-level(16px, 24px, 500, $montserrat-font-family),
+  $subheading-2: mat.define-typography-level(16px, 24px, 100, $montserrat-font-family),
+  $body-1: mat.define-typography-level(16px, 24px, 100, $montserrat-font-family),
+);
+
+.gmat-headline {
+  @include mat.typography-level($custom-typography-config, headline);
+}
+
+.gmat-display-2 {
+  @include mat.typography-level($custom-typography-config, display-2);
+}
+
+.gmat-title {
+  @include mat.typography-level($custom-typography-config, title);
+}
+
+.gmat-subheading-1 {
+  @include mat.typography-level($custom-typography-config, subheading-1);
+}
+
+.gmat-subheading-2 {
+  @include mat.typography-level($custom-typography-config, subheading-2);
+}
+
+.gmat-body-1 {
+  @include mat.typography-level($custom-typography-config, body-1);
+}

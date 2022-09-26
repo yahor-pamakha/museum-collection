@@ -1,0 +1,103 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 0 30px;
+  gap: 50px;
+
+  &__nav {
+    display: flex;
+    gap: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    color: black;
+
+    &-image {
+      transform: rotate(90deg);
+    }
+  }
+
+  &__view {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    gap: 20px;
+
+    &-wrapper {
+      height: inherit;
+      width: inherit;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &-zoom {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 15px;
+
+      &-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: black;
+        box-shadow: none;
+        transition: 0.4s ease-in-out;
+        width: 50px;
+        height: 50px;
+        margin-left: auto;
+        margin-right: 0;
+
+
+        &:hover:not([class*=mat-button-disabled]){
+          transition: 0.4s ease-in-out;
+          width: 60px;
+          height: 60px;
+          margin-right: -10px;
+        }
+
+        img {
+          filter: brightness(0) invert(1);
+        }
+      }
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    padding-left: 400px;
+    padding-right: 100px;
+
+    &-title {
+      max-width: 900px;
+      margin-bottom: 24px;
+    }
+
+    &-author {
+      max-width: 700px;
+      margin-bottom: 10px;
+    }
+
+    &-meta {
+      color: #a6a6a6;
+      margin-bottom: 44px;
+    }
+
+    &-tags {
+      display: flex;
+      gap: 5px;
+      margin-bottom: 16px;
+
+      &-item {
+        border: 1px solid;
+        padding: 8px 15px;
+      }
+    }
+  }
+}
+
+::ng-deep drag-scroll > div {
+  height: 100% !important;
+  width: 100% !important;
+  overflow: inherit !important;
+}

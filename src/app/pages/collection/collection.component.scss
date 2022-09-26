@@ -1,0 +1,47 @@
+.container {
+  &__item {
+    display: flex;
+    width: 100vw;
+    height: 33vh;
+
+    &-image {
+      width: inherit;
+      margin: 0;
+    }
+
+    &-info {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      width: inherit;
+      height: inherit;
+      opacity: 0;
+      background-color: #00000066;
+      transition: 0.7s ease-in-out;
+      text-align: center;
+      justify-content: center;
+      cursor: pointer;
+      text-decoration: none;
+
+      &:hover {
+        opacity: 1;
+      }
+
+      &-title {
+        color: white;
+        max-width: 340px;
+        margin: 0 auto 8px auto;
+      }
+
+      &-author {
+        color: white;
+        margin-bottom: 16px;
+      }
+
+      &-date {
+        color: white;
+        opacity: 0.6;
+      }
+    }
+  }
+}

@@ -1,0 +1,66 @@
+<div class="container">
+  <a class="container__nav" routerLink="/collection">
+    <img class="container__nav-image" src="assets/images/icons/arrow-down-icon.svg" />
+
+    <span class="gmat-subheading-1">
+      Back to Collection
+    </span>
+  </a>
+
+  <div class="container__view">
+    <drag-scroll
+      [ngStyle]="{
+        'height.vh': 80,
+        'width.vw': 100
+      }"
+    >
+      <div class="container__view-wrapper" [ngStyle]="{'display': imageWrapperDisplay}">
+
+      <img
+        *ngIf="object?.artObject.hasImage"
+        src="{{ object?.artObject.webImage.url }}"
+        [ngStyle]="{ 'height.px': imageHeight, 'width.px': imageWidth, 'transition.s': 0.6 }"
+      />
+
+      <img *ngIf="!object?.artObject.hasImage" src="assets/images/no-image.png" />
+      </div>
+    </drag-scroll>
+    
+    <div class="container__view-zoom" *ngIf="object?.artObject.hasImage">
+      <button
+        mat-fab
+        class="container__view-zoom-button"
+        *ngFor="let button of zoomButtons"
+        [disabled]="getButtonDisabled(button.name)"
+        (click)="onZoomButtonClick(button.name)"
+      >
+        <img src="{{ button.iconSrc }}" />
+      </button>
+    </div>
+  </div>
+
+  <div class="container__info">
+    <span class="container__info-title gmat-headline">
+      {{ object?.artObject.title }}
+    </span>
+
+    <span class="container__info-author gmat-display-2">
+      {{ object?.artObject.principalMaker }}
+    </span>
+
+    <span class="container__info-meta gmat-subheading-1">
+      {{ object?.artObject.productionPlaces | getPlaces }}
+      {{ object?.artObject.dating.presentingDate }}
+    </span>
+
+    <div class="container__info-tags">
+      <div class="container__info-tags-item" *ngFor="let tag of tags">
+        <span class="gmat-subheading-1"> {{ tag }} </span>
+      </div>
+    </div>
+
+    <span class="container__info-description gmat-subheading-1">
+      {{ object?.artObject.plaqueDescriptionEnglish }}
+    </span>
+  </div>
+</div>

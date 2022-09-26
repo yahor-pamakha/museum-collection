@@ -1,0 +1,20 @@
+<form class="container" [formGroup]="formGroup" (ngSubmit)="onSearchSubmit()">
+  <div class="container__search">
+    <img src="assets/images/icons/search-icon.svg" />
+
+    <input
+      class="container__search-input"
+      matInput
+      formControlName="searchControl"
+      placeholder="Search"
+      [disabled]="searchDisabled"
+    />
+  </div>
+
+  <mat-select class="container__select" placeholder="Filter" (selectionChange)="onSortSubmit($event)">
+    <mat-option>None</mat-option>
+    <mat-option *ngFor="let option of sortOptions" [value]="option.value">
+      {{ option.title }}
+    </mat-option>
+  </mat-select>
+</form>
