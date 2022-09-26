@@ -61,7 +61,7 @@ export class CollectionComponent extends GenericHooks implements OnInit {
     this.collectionAPIParams = {
       ...this.collectionAPIParams,
       searchKey,
-      sortKey: null
+      sortKey: null,
     };
     this.store.dispatch(fromStore.loadCollection(this.collectionAPIParams));
   }

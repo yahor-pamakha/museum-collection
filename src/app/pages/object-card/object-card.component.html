@@ -2,9 +2,7 @@
   <a class="container__nav" routerLink="/collection">
     <img class="container__nav-image" src="assets/images/icons/arrow-down-icon.svg" />
 
-    <span class="gmat-subheading-1">
-      Back to Collection
-    </span>
+    <span class="gmat-subheading-1"> Back to Collection </span>
   </a>
 
   <div class="container__view">
@@ -14,18 +12,17 @@
         'width.vw': 100
       }"
     >
-      <div class="container__view-wrapper" [ngStyle]="{'display': imageWrapperDisplay}">
+      <div class="container__view-wrapper" [ngStyle]="{ display: imageWrapperDisplay }">
+        <img
+          *ngIf="object?.artObject.hasImage"
+          src="{{ object?.artObject.webImage.url }}"
+          [ngStyle]="{ 'height.px': imageHeight, 'width.px': imageWidth, 'transition.s': 0.6 }"
+        />
 
-      <img
-        *ngIf="object?.artObject.hasImage"
-        src="{{ object?.artObject.webImage.url }}"
-        [ngStyle]="{ 'height.px': imageHeight, 'width.px': imageWidth, 'transition.s': 0.6 }"
-      />
-
-      <img *ngIf="!object?.artObject.hasImage" src="assets/images/no-image.png" />
+        <img *ngIf="!object?.artObject.hasImage" src="assets/images/no-image.png" />
       </div>
     </drag-scroll>
-    
+
     <div class="container__view-zoom" *ngIf="object?.artObject.hasImage">
       <button
         mat-fab
