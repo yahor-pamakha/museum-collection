@@ -1,0 +1,20 @@
+@use "@angular/material" as mat;
+@use "../gmat-typography/typography" as typography;
+
+.mat-select,
+.mat-option {
+  @include mat.typography-level(typography.$custom-typography-config, subheading-1);
+}
+
+.mat-select-placeholder {
+  color: black;
+}
+
+.mat-select-arrow-wrapper {
+  background-image: url("../../assets/images/icons/arrow-down-icon.svg");
+  margin: 0 5px 5px 0;
+ }
+
+ .mat-select-arrow {
+   opacity: 0;
+ }

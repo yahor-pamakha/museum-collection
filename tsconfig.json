@@ -1,14 +1,15 @@
 /* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
+  "strictPropertyInitialization": false,
   "compileOnSave": false,
   "compilerOptions": {
+    "noImplicitReturns": false,
+    "noImplicitAny": false,
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
-    "strict": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
-    "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
     "declaration": false,

@@ -1,0 +1,16 @@
+@use "@angular/material" as mat;
+@use "../gmat-typography/typography" as typography;
+@use '../colors/colors' as colors;
+
+.mat-input-element {
+    font-weight: 500 !important;
+
+  &::placeholder {
+    background-color: colors.$global-background-color;
+    color: black;
+  }
+}
+
+.mat-paginator {
+  background-color: colors.$global-background-color;
+}
