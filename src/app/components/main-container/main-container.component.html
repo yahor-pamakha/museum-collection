@@ -1,8 +1,8 @@
 <div class="container">
-  <div *ngIf="!routerUrl.includes('object')" class="container__navigation">
+  <div *ngIf="!currentUrl?.includes('object')" class="container__navigation">
     <a class="container__navigation-item gmat-title" routerLink="/collection">Collection</a>
   </div>
-
+  
   <app-spinner [spin]="isLoading">
     <router-outlet></router-outlet>
   </app-spinner>
