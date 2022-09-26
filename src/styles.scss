@@ -11,4 +11,5 @@ body {
   @include mat.typography-level(typography.$custom-typography-config, body-1);
   margin: 0;
   background-color: colors.$global-background-color;
+  overflow-x: hidden;
 }

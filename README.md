@@ -1,6 +1,9 @@
-# Test
+# Museum collection
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.2.
+This application is deployed on Firebase hosting.
+Link - `https://museum-collection.firebaseapp.com/`
+
+Click on the "Collection" navigation item to navigate to the main content.
 
 ## Development server
 
